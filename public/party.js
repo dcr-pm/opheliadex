@@ -190,6 +190,8 @@
     });
   }
 
+  window.partyBurst = burst; // lets other pages (e.g. the homepage joke box) fire confetti
+
   /* ---------- Wire up ---------- */
   function init() {
     document.querySelectorAll('[data-balloons]').forEach(initBalloons);

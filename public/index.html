@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="party">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,67 +12,148 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/party.css">
+  <link rel="stylesheet" href="/home.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="/party.js" defer></script>
 </head>
-<body>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="logo" href="/">Ophelia<span>.</span></a>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#photos">Photos</a>
-      </nav>
-    </div>
-  </header>
-
+<body class="home">
   <main>
-    <section class="hero confetti">
-      <div class="wrap">
-        <!-- To use a photo: add public/images/me.jpg and replace the "O" below with <img src="/images/me.jpg" alt=""> -->
-        <div class="avatar" aria-hidden="true">O</div>
-        <h1>Hi, I'm Ophelia <span class="wave">👋</span></h1>
-        <p class="lead">Welcome to my little corner of the internet.</p>
+    <section class="sky home-hero">
+      <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+      <svg class="bunting" viewBox="0 0 1200 130" aria-hidden="true">
+      <polygon points="9.3,13.1 57.4,26.7 17.6,75.7" fill="#ff6fa5"/>
+      <polygon points="75.6,31.2 124.4,41.9 87.7,93.2" fill="#ffc94d"/>
+      <polygon points="142.0,45.1 191.4,52.8 157.8,106.3" fill="#3cc7b4"/>
+      <polygon points="208.4,54.8 258.2,59.3 228.1,114.9" fill="#8b6cf6"/>
+      <polygon points="275.0,60.3 325.0,61.7 298.5,119.0" fill="#5bbcff"/>
+      <polygon points="341.7,61.6 391.6,59.7 368.8,118.6" fill="#ff8a5b"/>
+      <polygon points="408.5,58.6 458.2,53.6 439.1,113.8" fill="#ff6fa5"/>
+      <polygon points="475.3,51.3 524.7,43.2 509.4,104.5" fill="#ffc94d"/>
+      <polygon points="542.3,39.7 591.0,28.6 579.6,90.7" fill="#3cc7b4"/>
+      <polygon points="609.0,28.6 657.7,39.7 620.4,90.7" fill="#8b6cf6"/>
+      <polygon points="675.3,43.2 724.7,51.3 690.6,104.5" fill="#5bbcff"/>
+      <polygon points="741.8,53.6 791.5,58.6 760.9,113.8" fill="#ff8a5b"/>
+      <polygon points="808.4,59.7 858.3,61.6 831.2,118.6" fill="#ff6fa5"/>
+      <polygon points="875.0,61.7 925.0,60.3 901.5,119.0" fill="#ffc94d"/>
+      <polygon points="941.8,59.3 991.6,54.8 971.9,114.9" fill="#3cc7b4"/>
+      <polygon points="1008.6,52.8 1058.0,45.1 1042.2,106.3" fill="#8b6cf6"/>
+      <polygon points="1075.6,41.9 1124.4,31.2 1112.3,93.2" fill="#5bbcff"/>
+      <polygon points="1142.6,26.7 1190.7,13.1 1182.4,75.7" fill="#ff8a5b"/>
+      <path d="M0,10 Q300,104 600,26 Q900,104 1200,10" fill="none" stroke="#2b2140" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span class="floaty f1" aria-hidden="true">🎵</span><span class="floaty f2" aria-hidden="true">⚽</span>
+      <span class="floaty f3" aria-hidden="true">⭐</span><span class="floaty f4" aria-hidden="true">🎶</span>
+      <span class="floaty f5" aria-hidden="true">🐾</span><span class="floaty f6" aria-hidden="true">😄</span>
+
+      <div class="wrap narrow sky-inner">
+        <!-- To use a photo: add public/images/ophelia.jpg and replace the "O" below with <img src="/images/ophelia.jpg" alt="Ophelia"> -->
+        <div class="avatar pop" aria-hidden="true">O</div>
+        <h1><span class="pop p2">Hi, I'm</span> <span class="pop p3 name">Ophelia!</span> <span class="pop p4"><span class="wave">👋</span></span></h1>
+        <p class="lead pop p5">I love music, sports, my friends, and making everybody laugh. Welcome to my page!</p>
       </div>
     </section>
 
     <section id="about">
       <div class="wrap">
-        <h2>A few of my favourite things</h2>
-        <div class="cards">
-          <div class="card">
-            <div class="icon">🎨</div>
-            <h3>Drawing</h3>
-            <p>Placeholder: tell us what she loves to make.</p>
-          </div>
-          <div class="card">
-            <div class="icon">📚</div>
-            <h3>Books</h3>
-            <p>Placeholder: a favourite story or series.</p>
-          </div>
-          <div class="card">
-            <div class="icon">🐾</div>
-            <h3>Animals</h3>
-            <p>Placeholder: a favourite animal or pet.</p>
-          </div>
+        <h2 class="reveal">All about me <svg class="squiggle" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 6 q7 -8 14 0 t14 0 t14 0 t14 0 t14 0 t14 0 t14 0 t14 0" fill="none" stroke="#ff6fa5" stroke-width="4" stroke-linecap="round"/></svg></h2>
+        <div class="facts reveal">
+          <span class="fact">🎂 Born in December 2021</span>
+          <span class="fact">🏙️ Born in Toronto</span>
+          <span class="fact">👩 My mom is Laura</span>
+          <span class="fact">👨 My dad is Darren</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="favourites">
+      <div class="wrap">
+        <h2 class="reveal">My favourite things <svg class="squiggle" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 6 q7 -8 14 0 t14 0 t14 0 t14 0 t14 0 t14 0 t14 0 t14 0" fill="none" stroke="#3cc7b4" stroke-width="4" stroke-linecap="round"/></svg></h2>
+        <div class="loves reveal">
+          <div class="love"><span class="icon">🎵</span><h3>Music</h3><p>I love to sing, dance and turn the music up!</p></div>
+          <div class="love"><span class="icon">⚽</span><h3>Sports</h3><p>Running, kicking, jumping… I'm always on the move.</p></div>
+          <div class="love"><span class="icon">👯</span><h3>My friends</h3><p>Everything is more fun when my friends are there.</p></div>
+          <div class="love"><span class="icon">😂</span><h3>Jokes &amp; giggles</h3><p>I love telling jokes and making people laugh.</p></div>
+          <div class="love"><span class="icon">☀️</span><h3>Every day</h3><p>I try to make the best of every single day!</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="family">
+      <div class="wrap">
+        <h2 class="reveal">My furry family <svg class="squiggle" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 6 q7 -8 14 0 t14 0 t14 0 t14 0 t14 0 t14 0 t14 0 t14 0" fill="none" stroke="#ffc94d" stroke-width="4" stroke-linecap="round"/></svg></h2>
+        <!-- To use a pet photo: add it to public/images/ and replace the emoji with <img src="/images/bo.jpg" alt="Bo"> -->
+        <div class="pets reveal">
+          <div class="pet"><div class="face">🐕</div><h3>Bo</h3><p class="breed">Golden Retriever</p><span class="age">9 years old</span><p class="say">My big, golden, cuddly brother.</p></div>
+          <div class="pet"><div class="face">🐶</div><h3>Canty</h3><p class="breed">Brittany Spaniel</p><span class="age">10 years old</span><p class="say">The oldest and wisest of us all.</p></div>
+          <div class="pet"><div class="face">🐱</div><h3>Mimi</h3><p class="breed">Kitten</p><span class="age">2 years old</span><p class="say">Small, speedy and very curious.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="jokes">
+      <div class="wrap">
+        <h2 class="reveal">Want to hear a joke? <svg class="squiggle" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 6 q7 -8 14 0 t14 0 t14 0 t14 0 t14 0 t14 0 t14 0 t14 0" fill="none" stroke="#8b6cf6" stroke-width="4" stroke-linecap="round"/></svg></h2>
+        <div class="joke-box reveal">
+          <p class="joke-q" id="joke-q">What kind of music do balloons hate?</p>
+          <p class="joke-a" id="joke-a" aria-live="polite"><noscript>Pop music!</noscript></p>
+          <button class="btn" id="joke-btn" type="button">Tell me the answer!</button>
         </div>
       </div>
     </section>
 
     <section id="photos">
       <div class="wrap">
-        <h2>Photos</h2>
+        <h2 class="reveal">Photos <svg class="squiggle" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 6 q7 -8 14 0 t14 0 t14 0 t14 0 t14 0 t14 0 t14 0 t14 0" fill="none" stroke="#5bbcff" stroke-width="4" stroke-linecap="round"/></svg></h2>
         <!-- Add pictures to public/images/ and swap each placeholder for: <figure><img src="/images/name.jpg" alt="short description" loading="lazy"></figure> -->
-        <div class="gallery">
-          <figure>Photo coming soon</figure>
-          <figure>Photo coming soon</figure>
-          <figure>Photo coming soon</figure>
-          <figure>Photo coming soon</figure>
+        <div class="gallery reveal">
+          <figure>📸 Photo coming soon</figure>
+          <figure>📸 Photo coming soon</figure>
+          <figure>📸 Photo coming soon</figure>
+          <figure>📸 Photo coming soon</figure>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">Made with love 💛</div>
+    <div class="wrap">Made with love by Mom &amp; Dad 💛</div>
   </footer>
+
+  <script>
+    // Joke box: first tap shows the answer (with confetti), second tap brings the next joke.
+    (function () {
+      var jokes = [
+        ['What kind of music do balloons hate?', 'Pop music!'],
+        ['What do you call a sleeping dinosaur?', 'A dino-snore!'],
+        ['Why did the teddy bear say no to dessert?', 'Because she was stuffed!'],
+        ['What do cats like to eat for breakfast?', 'Mice Krispies!'],
+        ['What do you call a dog that does magic?', 'A Labra-cadabra-dor!'],
+        ['Why did the banana go to the doctor?', "It wasn't peeling well!"],
+        ['Why are fish so smart?', 'Because they live in schools!'],
+        ["What is a cat's favourite colour?", 'Purr-ple!'],
+        ['Why was the soccer field wet?', 'The players kept dribbling!'],
+        ['What do you call a bear with no teeth?', 'A gummy bear!']
+      ];
+      var q = document.getElementById('joke-q'), a = document.getElementById('joke-a'), b = document.getElementById('joke-btn');
+      var i = 0, shown = false;
+      a.textContent = '';
+      b.addEventListener('click', function () {
+        if (!shown) {
+          a.textContent = jokes[i][1] + ' 😂';
+          a.classList.remove('show'); void a.offsetWidth; a.classList.add('show');
+          b.textContent = 'Another one!';
+          var r = a.getBoundingClientRect();
+          if (window.partyBurst) window.partyBurst(r.left + r.width / 2, r.top + r.height / 2, { count: 60, speed: 10 });
+        } else {
+          i = (i + 1) % jokes.length;
+          q.textContent = jokes[i][0];
+          a.textContent = '';
+          b.textContent = 'Tell me the answer!';
+        }
+        shown = !shown;
+      });
+    })();
+  </script>
 </body>
 </html>
