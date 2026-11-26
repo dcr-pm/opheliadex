@@ -74,3 +74,8 @@ html:not(.js) .joke-box .btn { display: none; }
 .lightbox::backdrop { background: rgba(27, 22, 38, .85); }
 .lightbox img { display: block; max-width: 94vw; max-height: 90vh; border-radius: 18px; border: 6px solid #fff; cursor: zoom-out; }
 .lightbox-close { position: absolute; top: -14px; right: -10px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--pink); color: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; box-shadow: 0 4px 0 #d93a77; }
+
+/* Rotating profile picture */
+.home-hero .avatar { position: relative; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.home-hero .avatar img { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease; }
+.home-hero .avatar img.on { opacity: 1; }

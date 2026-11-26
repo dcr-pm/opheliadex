@@ -47,7 +47,13 @@
       <span class="floaty f5" aria-hidden="true">🐾</span><span class="floaty f6" aria-hidden="true">😄</span>
 
       <div class="wrap narrow sky-inner">
-        <div class="avatar pop"><img src="/images/ophelia.jpg" alt="Ophelia" width="480" height="480"></div>
+        <!-- Profile pictures: these fade from one to the next. To add one, put a square photo in public/images/ and add another <img> line. -->
+        <div class="avatar pop" id="avatar" title="Tap for the next photo">
+          <img class="on" src="/images/ophelia.jpg" alt="Ophelia" width="480" height="480">
+          <img src="/images/ophelia-3.jpg" alt="" width="480" height="480">
+          <img src="/images/ophelia-2.jpg" alt="" width="480" height="480">
+          <img src="/images/ophelia-4.jpg" alt="" width="480" height="480">
+        </div>
         <h1><span class="pop p2">Hi, I'm</span> <span class="pop p3 name">Ophelia!</span> <span class="pop p4"><span class="wave">👋</span></span></h1>
         <p class="lead pop p5">I love music, sports, my friends, and making everybody laugh. Welcome to my page!</p>
       </div>
@@ -125,6 +131,23 @@
   </footer>
 
   <script>
+    // Profile picture: fade to the next photo every few seconds, or right away when tapped.
+    (function () {
+      var av = document.getElementById('avatar');
+      if (!av) return;
+      var pics = av.querySelectorAll('img'), i = 0, timer;
+      if (pics.length < 2) return;
+      function next() {
+        pics[i].classList.remove('on');
+        i = (i + 1) % pics.length;
+        pics[i].classList.add('on');
+      }
+      function start() { clearInterval(timer); timer = setInterval(next, 3500); }
+      av.addEventListener('click', function () { next(); start(); });
+      document.addEventListener('visibilitychange', function () { if (document.hidden) clearInterval(timer); else start(); });
+      start();
+    })();
+
     // Photo gallery: tap a photo to see it bigger.
     (function () {
       var box = document.getElementById('lightbox');
