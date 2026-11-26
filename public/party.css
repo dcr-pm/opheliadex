@@ -199,3 +199,22 @@ html.intro-on .intro, .intro.open {
   .cloud, .bunting, .five, .spark, .pop, .scroll-cue, .rsvp .btn::after, .thanks-card .big, .cd b.tick { animation: none !important; }
   html.js .reveal { opacity: 1; translate: none; transition: none; }
 }
+
+/* Add-to-calendar menu */
+.cal { margin-top: 14px; }
+.cal summary {
+  list-style: none; cursor: pointer; text-align: center; color: #fff; background: var(--pink);
+  font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 1.05rem;
+  border-radius: 999px; padding: 10px 16px;
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--pink) 70%, #000);
+}
+.cal summary::-webkit-details-marker { display: none; }
+.cal summary:focus-visible { outline: 4px solid color-mix(in srgb, var(--purple) 45%, transparent); outline-offset: 3px; }
+.cal[open] summary { transform: translateY(3px); box-shadow: 0 3px 0 color-mix(in srgb, var(--pink) 70%, #000); }
+.cal-menu { display: grid; gap: 8px; margin-top: 16px; }
+.cal-menu a {
+  display: block; padding: 10px 14px; border: 2px solid var(--line); border-radius: 14px;
+  background: var(--bg); color: var(--ink); font-weight: 800; text-decoration: none; font-size: 1rem;
+}
+.cal-menu a:hover { border-color: var(--pink); }
+.cal-menu small { font-weight: 600; color: var(--muted); }
