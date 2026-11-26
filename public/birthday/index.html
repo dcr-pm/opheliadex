@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>You're invited to Ophelia's birthday party!</title>
+  <meta name="description" content="Join us to celebrate! Tap to see the details and RSVP.">
+  <meta name="theme-color" content="#ff6fa5">
+
+  <!-- Link preview for texts and emails -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://opheliadex.com/birthday/">
+  <meta property="og:title" content="You're invited to Ophelia's birthday party! 🎉">
+  <meta property="og:description" content="Tap to see the details and RSVP.">
+  <meta property="og:image" content="https://opheliadex.com/images/invite-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main>
+    <section class="invite-hero confetti">
+      <div class="wrap narrow">
+        <div class="eyebrow">You're invited!</div>
+        <!-- PARTY DETAILS: update the age, date, time, place and RSVP deadline below -->
+        <h1>Ophelia is turning <span class="age">?</span></h1>
+        <p class="lead" style="color:var(--muted);font-size:1.2rem">Come celebrate with cake, games and lots of fun. We'd love to see you there!</p>
+
+        <div class="details" style="text-align:left">
+          <div class="detail">
+            <div class="label">When</div>
+            <div class="value">[Day, Month Date]</div>
+            <div class="sub">[Start time] – [End time]</div>
+          </div>
+          <div class="detail">
+            <div class="label">Where</div>
+            <div class="value">[Venue name]</div>
+            <div class="sub">[Street address, City]<br>
+              <a href="https://maps.google.com/?q=" target="_blank" rel="noopener">Open in Maps →</a></div>
+          </div>
+        </div>
+        <p class="note" style="text-align:left">🎁 [Optional note: theme, what to bring, dress code, or "no gifts please"]</p>
+      </div>
+    </section>
+
+    <section style="padding-top:24px">
+      <div class="wrap narrow">
+        <form class="rsvp" name="rsvp" method="POST" action="/birthday/thanks/"
+              data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="rsvp">
+          <p class="hp"><label>Don't fill this in: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+          <h2>RSVP</h2>
+          <p class="deadline">Please let us know by <strong>[RSVP date]</strong>.</p>
+
+          <fieldset class="field">
+            <legend>Can you make it?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="attending" value="Yes" required><span>🎉 Yes!<small>Count us in</small></span></label>
+              <label class="choice"><input type="radio" name="attending" value="Maybe"><span>🤔 Maybe<small>We'll confirm</small></span></label>
+              <label class="choice"><input type="radio" name="attending" value="No"><span>😢 Can't<small>Next time!</small></span></label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="child">Child's name(s)</label>
+            <input id="child" type="text" name="child_names" autocomplete="off" required placeholder="e.g. Maya">
+          </div>
+
+          <div class="field">
+            <label for="parent">Parent / guardian name</label>
+            <input id="parent" type="text" name="parent_name" autocomplete="name" required>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="email">Email <span class="hint">(optional)</span></label>
+              <input id="email" type="email" name="email" autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="phone">Phone <span class="hint">(optional)</span></label>
+              <input id="phone" type="tel" name="phone" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="attending-only">
+            <div class="row">
+              <div class="field">
+                <label for="kids">Number of kids</label>
+                <input id="kids" type="number" name="kids" min="0" max="10" value="1" inputmode="numeric">
+              </div>
+              <div class="field">
+                <label for="adults">Number of adults</label>
+                <input id="adults" type="number" name="adults" min="0" max="10" value="1" inputmode="numeric">
+              </div>
+            </div>
+            <div class="field">
+              <label for="allergies">Allergies or dietary needs <span class="hint">(optional)</span></label>
+              <input id="allergies" type="text" name="allergies" placeholder="e.g. nut allergy">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Message for Ophelia <span class="hint">(optional)</span></label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+
+          <button class="btn" type="submit">Send RSVP</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Questions? Just reply to the message you got this link in.</div>
+  </footer>
+
+  <script>
+    // Hide headcount and allergy fields when someone can't come.
+    (function () {
+      var form = document.querySelector('form.rsvp');
+      var extra = form.querySelector('.attending-only');
+      form.addEventListener('change', function (e) {
+        if (e.target.name !== 'attending') return;
+        extra.hidden = e.target.value === 'No';
+      });
+    })();
+  </script>
+</body>
+</html>

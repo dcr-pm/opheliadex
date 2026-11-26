@@ -3,21 +3,76 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Opheliadex</title>
-  <style>
-    :root { --bg:#f7f7f5; --fg:#1a1a1a; --muted:#666; }
-    @media (prefers-color-scheme: dark) { :root { --bg:#111; --fg:#eee; --muted:#999; } }
-    html,body { margin:0; height:100%; background:var(--bg); color:var(--fg);
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
-    main { min-height:100%; display:grid; place-content:center; text-align:center; padding:16px; }
-    h1 { font-size:clamp(2rem,8vw,4rem); margin:0 0 .25em; letter-spacing:-.02em; }
-    p { color:var(--muted); margin:0; }
-  </style>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ophelia</title>
+  <meta name="description" content="Hi, I'm Ophelia! Welcome to my little corner of the internet.">
+  <meta name="theme-color" content="#ff6fa5">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="/">Ophelia<span>.</span></a>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#photos">Photos</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
-    <h1>Opheliadex</h1>
-    <p>Coming soon.</p>
+    <section class="hero confetti">
+      <div class="wrap">
+        <!-- To use a photo: add public/images/me.jpg and replace the "O" below with <img src="/images/me.jpg" alt=""> -->
+        <div class="avatar" aria-hidden="true">O</div>
+        <h1>Hi, I'm Ophelia <span class="wave">👋</span></h1>
+        <p class="lead">Welcome to my little corner of the internet.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <h2>A few of my favourite things</h2>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">🎨</div>
+            <h3>Drawing</h3>
+            <p>Placeholder: tell us what she loves to make.</p>
+          </div>
+          <div class="card">
+            <div class="icon">📚</div>
+            <h3>Books</h3>
+            <p>Placeholder: a favourite story or series.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🐾</div>
+            <h3>Animals</h3>
+            <p>Placeholder: a favourite animal or pet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="photos">
+      <div class="wrap">
+        <h2>Photos</h2>
+        <!-- Add pictures to public/images/ and swap each placeholder for: <figure><img src="/images/name.jpg" alt="short description" loading="lazy"></figure> -->
+        <div class="gallery">
+          <figure>Photo coming soon</figure>
+          <figure>Photo coming soon</figure>
+          <figure>Photo coming soon</figure>
+          <figure>Photo coming soon</figure>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Made with love 💛</div>
+  </footer>
 </body>
 </html>
