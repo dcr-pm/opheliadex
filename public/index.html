@@ -47,8 +47,7 @@
       <span class="floaty f5" aria-hidden="true">🐾</span><span class="floaty f6" aria-hidden="true">😄</span>
 
       <div class="wrap narrow sky-inner">
-        <!-- To use a photo: add public/images/ophelia.jpg and replace the "O" below with <img src="/images/ophelia.jpg" alt="Ophelia"> -->
-        <div class="avatar pop" aria-hidden="true">O</div>
+        <div class="avatar pop"><img src="/images/ophelia.jpg" alt="Ophelia" width="480" height="480"></div>
         <h1><span class="pop p2">Hi, I'm</span> <span class="pop p3 name">Ophelia!</span> <span class="pop p4"><span class="wave">👋</span></span></h1>
         <p class="lead pop p5">I love music, sports, my friends, and making everybody laugh. Welcome to my page!</p>
       </div>
@@ -82,9 +81,9 @@
     <section id="family">
       <div class="wrap">
         <h2 class="reveal">My furry family <svg class="squiggle" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 6 q7 -8 14 0 t14 0 t14 0 t14 0 t14 0 t14 0 t14 0 t14 0" fill="none" stroke="#ffc94d" stroke-width="4" stroke-linecap="round"/></svg></h2>
-        <!-- To use a pet photo: add it to public/images/ and replace the emoji with <img src="/images/bo.jpg" alt="Bo"> -->
+        <!-- To use a pet photo: add it to public/images/ and replace the emoji with <img src="/images/canty.jpg" alt="Canty"> -->
         <div class="pets reveal">
-          <div class="pet"><div class="face">🐕</div><h3>Bo</h3><p class="breed">Golden Retriever</p><span class="age">9 years old</span><p class="say">My big, golden, cuddly brother.</p></div>
+          <div class="pet"><div class="face"><img src="/images/bo.jpg" alt="Ophelia hugging Bo, a golden retriever" width="360" height="360" loading="lazy"></div><h3>Bo</h3><p class="breed">Golden Retriever</p><span class="age">9 years old</span><p class="say">My big, golden, cuddly brother.</p></div>
           <div class="pet"><div class="face">🐶</div><h3>Canty</h3><p class="breed">Brittany Spaniel</p><span class="age">10 years old</span><p class="say">The oldest and wisest of us all.</p></div>
           <div class="pet"><div class="face">🐱</div><h3>Mimi</h3><p class="breed">Kitten</p><span class="age">2 years old</span><p class="say">Small, speedy and very curious.</p></div>
         </div>
@@ -105,22 +104,43 @@
     <section id="photos">
       <div class="wrap">
         <h2 class="reveal">Photos <svg class="squiggle" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 6 q7 -8 14 0 t14 0 t14 0 t14 0 t14 0 t14 0 t14 0 t14 0" fill="none" stroke="#5bbcff" stroke-width="4" stroke-linecap="round"/></svg></h2>
-        <!-- Add pictures to public/images/ and swap each placeholder for: <figure><img src="/images/name.jpg" alt="short description" loading="lazy"></figure> -->
+        <!-- To add a photo: put it in public/images/ and copy one of the <figure> lines below. -->
         <div class="gallery reveal">
-          <figure>📸 Photo coming soon</figure>
-          <figure>📸 Photo coming soon</figure>
-          <figure>📸 Photo coming soon</figure>
-          <figure>📸 Photo coming soon</figure>
+          <figure><a href="/images/ophelia-grass.jpg" data-full><img src="/images/ophelia-grass-thumb.jpg" alt="Ophelia lying on the grass" width="600" height="800" loading="lazy"></a></figure>
+          <figure><a href="/images/ophelia-bo-hug.jpg" data-full><img src="/images/ophelia-bo-hug-thumb.jpg" alt="Ophelia cuddling Bo the golden retriever" width="600" height="800" loading="lazy"></a></figure>
+          <figure><a href="/images/ophelia-dandelion.jpg" data-full><img src="/images/ophelia-dandelion-thumb.jpg" alt="Ophelia blowing on a dandelion" width="600" height="800" loading="lazy"></a></figure>
+          <figure><a href="/images/ophelia-pool.jpg" data-full><img src="/images/ophelia-pool-thumb.jpg" alt="Ophelia dancing by a pool in a sunshine romper" width="600" height="800" loading="lazy"></a></figure>
+          <figure><a href="/images/ophelia-walk.jpg" data-full><img src="/images/ophelia-walk-thumb.jpg" alt="Ophelia carrying a big yellow cup" width="600" height="800" loading="lazy"></a></figure>
         </div>
       </div>
     </section>
   </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Photo">
+    <img alt="">
+    <button type="button" class="lightbox-close" aria-label="Close photo">×</button>
+  </dialog>
 
   <footer class="site-footer">
     <div class="wrap">Made with love by Mom &amp; Dad 💛</div>
   </footer>
 
   <script>
+    // Photo gallery: tap a photo to see it bigger.
+    (function () {
+      var box = document.getElementById('lightbox');
+      if (!box || !box.showModal) return; // older browsers just open the photo itself
+      var img = box.querySelector('img');
+      document.querySelectorAll('a[data-full]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          img.src = a.href; img.alt = a.querySelector('img').alt;
+          box.showModal();
+        });
+      });
+      box.addEventListener('click', function () { box.close(); });
+    })();
+
     // Joke box: first tap shows the answer (with confetti), second tap brings the next joke.
     (function () {
       var jokes = [

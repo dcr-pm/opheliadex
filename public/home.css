@@ -61,3 +61,16 @@ html:not(.js) .joke-box .btn { display: none; }
 @media (prefers-reduced-motion: reduce) { .floaty, .home-hero .avatar { animation: none !important; } }
 @media (max-width: 560px) { .love { max-width: none; } }
 @media (max-width: 560px) { .floaty.f3, .floaty.f4, .floaty.f5, .floaty.f6 { display: none; } }
+
+/* Photos */
+.home-hero .avatar { background: #fff; }
+.home .gallery { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.home .gallery figure { aspect-ratio: 3 / 4; padding: 0; border: 5px solid #fff; box-shadow: 0 10px 24px rgba(43, 33, 64, .16); transition: transform .2s; }
+.home .gallery figure:hover { transform: rotate(0) scale(1.03); }
+.home .gallery a { display: block; width: 100%; height: 100%; cursor: zoom-in; }
+@media (min-width: 900px) { .home .gallery { grid-template-columns: repeat(5, 1fr); } }
+@media (max-width: 560px) { .home .gallery { grid-template-columns: 1fr 1fr; } .home .gallery figure:last-child { grid-column: 1 / -1; aspect-ratio: 1; } .home .gallery figure:last-child img { object-position: 50% 85%; } }
+.lightbox { border: 0; padding: 0; background: transparent; max-width: 94vw; max-height: 94vh; overflow: visible; }
+.lightbox::backdrop { background: rgba(27, 22, 38, .85); }
+.lightbox img { display: block; max-width: 94vw; max-height: 90vh; border-radius: 18px; border: 6px solid #fff; cursor: zoom-out; }
+.lightbox-close { position: absolute; top: -14px; right: -10px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--pink); color: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; box-shadow: 0 4px 0 #d93a77; }
