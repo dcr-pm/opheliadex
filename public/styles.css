@@ -186,7 +186,6 @@ fieldset { border: 0; padding: 0; margin: 0 0 18px; }
 .thanks { text-align: center; padding: 72px 0; }
 .thanks .big { font-size: 4rem; line-height: 1; margin-bottom: 12px; }
 
-/* Map */
-.map { margin: 12px 0 0; background: var(--surface); border: 2px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
-.map iframe { display: block; width: 100%; height: 260px; border: 0; }
-.map .map-btn { display: block; width: auto; margin: 14px; }
+
+/* Directions button inside the Where card */
+.detail .dir-btn { display: block; width: 100%; margin-top: 14px; font-size: 1.05rem; padding: 10px 16px; color: #fff; }
