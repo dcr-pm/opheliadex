@@ -142,7 +142,7 @@ section { padding: 56px 0; }
 .field { margin-bottom: 18px; }
 .field label, .field legend { display: block; font-weight: 800; margin-bottom: 6px; }
 .field .hint { font-weight: 400; color: var(--muted); font-size: .9rem; }
-.row { display: grid; gap: 0 14px; grid-template-columns: 1fr 1fr; }
+.row { display: grid; gap: 0 14px; grid-template-columns: 1fr 1fr; align-items: end; }
 @media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
 input[type=text], input[type=email], input[type=tel], input[type=number], textarea {
   width: 100%;
