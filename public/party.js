@@ -72,6 +72,32 @@
     else { raf = 0; ctx.clearRect(0, 0, innerWidth, innerHeight); }
   }
 
+  /* ---------- Pop sound (made in the browser, no audio file) ---------- */
+  var actx;
+  function popSound(pitch) {
+    try {
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      actx = actx || new AC();
+      if (actx.state === 'suspended') actx.resume();
+      var t = actx.currentTime, i;
+      // Sharp burst of noise: the "snap" of the balloon skin.
+      var len = Math.floor(actx.sampleRate * .09), buf = actx.createBuffer(1, len, actx.sampleRate), d = buf.getChannelData(0);
+      for (i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3);
+      var n = actx.createBufferSource(), f = actx.createBiquadFilter(), g = actx.createGain();
+      n.buffer = buf; f.type = 'bandpass'; f.frequency.value = 1400 * pitch; f.Q.value = .7; g.gain.value = .5;
+      n.connect(f); f.connect(g); g.connect(actx.destination); n.start(t);
+      // Quick falling tone: the round "pop" underneath.
+      var o = actx.createOscillator(), og = actx.createGain();
+      o.type = 'sine';
+      o.frequency.setValueAtTime(520 * pitch, t);
+      o.frequency.exponentialRampToValueAtTime(90, t + .08);
+      og.gain.setValueAtTime(.35, t);
+      og.gain.exponentialRampToValueAtTime(.001, t + .1);
+      o.connect(og); og.connect(actx.destination); o.start(t); o.stop(t + .11);
+    } catch (e) {}
+  }
+
   /* ---------- Balloons ---------- */
   function toast(msg) {
     var t = document.createElement('div');
@@ -96,13 +122,15 @@
       var x = Math.random() < .7 ? (Math.random() < .5 ? rnd(-2, 20) : rnd(72, 92)) : rnd(20, 72);
       b.className = 'balloon';
       b.style.setProperty('--x', x + '%');
-      b.style.setProperty('--s', rnd(48, 86) + 'px');
+      var sz = rnd(48, 86);
+      b.style.setProperty('--s', sz + 'px');
       b.style.setProperty('--d', d + 's');
       b.style.setProperty('--delay', (initial ? -rnd(0, d) : rnd(0, 1.5)) + 's');
       b.style.setProperty('--sw', rnd(2.2, 4) + 's');
       b.innerHTML = balloonSVG(c);
       b.addEventListener('pointerdown', function () {
         var r = b.getBoundingClientRect();
+        popSound(1.45 - (sz - 48) / 38 * .6 + rnd(-.05, .05)); // small balloons pop higher, big ones lower
         burst(r.left + r.width / 2, r.top + r.width * .6, { count: 30, speed: 6.5, colors: [c, c, '#ffffff'] });
         b.remove();
         popped++;
