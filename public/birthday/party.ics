@@ -6,10 +6,10 @@ METHOD:PUBLISH
 BEGIN:VEVENT
 UID:ophelia-5th-birthday-20261218@opheliadex.com
 DTSTAMP:20261126T000000Z
-DTSTART:20261218T160000
-DTEND:20261218T180000
+DTSTART:20261218T210000Z
+DTEND:20261218T230000Z
 SUMMARY:Ophelia's 5th Birthday Party 🎉
-LOCATION:Kids Playland
+LOCATION:Kidz Playland - Indoor Playground\, 660 The Kingsway\, Peterborough\, ON K9J 7C8
 DESCRIPTION:Parents and grandparents welcome - food and drinks for grown-ups too. Please bring socks for the play area. Invite & RSVP: https://opheliadex.com/birthday/
 URL:https://opheliadex.com/birthday/
 BEGIN:VALARM
