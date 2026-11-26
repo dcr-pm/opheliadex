@@ -82,12 +82,13 @@
 
           <div class="row">
             <div class="field">
-              <label for="email">Email <span class="hint">(optional)</span></label>
-              <input id="email" type="email" name="email" autocomplete="email">
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" autocomplete="email" required>
             </div>
             <div class="field">
-              <label for="phone">Phone <span class="hint">(optional)</span></label>
-              <input id="phone" type="tel" name="phone" autocomplete="tel">
+              <label for="phone">Phone</label>
+              <input id="phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" required
+                     pattern="[0-9+\(\)\-\s.]{7,}" title="Please enter a phone number">
             </div>
           </div>
 
