@@ -220,3 +220,11 @@ html.intro-on .intro, .intro.open, .intro.gone {
 }
 .cal-menu a:hover { border-color: var(--pink); }
 .cal-menu small { font-weight: 600; color: var(--muted); }
+
+/* Link from the invite to the homepage */
+.meet { padding: 8px 0 24px; }
+.meet-card { display: flex; align-items: center; gap: 16px; padding: 16px 18px; background: #fff; border: 3px solid #ffe3a1; border-radius: 24px; box-shadow: 0 8px 0 #ffe3a1, var(--shadow); color: var(--ink); text-decoration: none; transition: transform .2s; }
+.meet-card:hover { transform: translateY(-3px) rotate(-.6deg); }
+.meet-card img { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 4px 12px rgba(43, 33, 64, .18); flex: none; }
+.meet-card strong { display: block; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 1.3rem; }
+.meet-card small { display: block; color: var(--muted); font-size: .95rem; line-height: 1.4; }
