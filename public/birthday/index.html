@@ -25,12 +25,12 @@
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/party.css">
   <script>
-    // Show the envelope intro once per visit (skipped for people who prefer reduced motion).
+    // Show the envelope every time the invite is opened, except when coming back from the thank-you page.
     (function (r) {
       r.classList.add('js');
-      try {
-        if (!matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('invite-opened')) r.classList.add('intro-on');
-      } catch (e) {}
+      var back = false;
+      try { back = /\/birthday\/thanks/.test(new URL(document.referrer).pathname); } catch (e) {}
+      if (!back) r.classList.add('intro-on');
       // Safety net: never leave the envelope covering the page if the effects script fails to load.
       setTimeout(function () { if (!window.__party) r.classList.remove('intro-on'); }, 4000);
     })(document.documentElement);

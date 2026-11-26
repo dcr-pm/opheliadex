@@ -178,8 +178,12 @@
     intro.addEventListener('click', function () {
       if (opened) return;
       opened = true;
+      if (reduce) { // gentle version: a simple fade, no flip or confetti
+        intro.classList.add('gone'); root.classList.remove('intro-on');
+        setTimeout(function () { intro.remove(); }, 700);
+        return;
+      }
       intro.classList.add('open');
-      try { sessionStorage.setItem('invite-opened', '1'); } catch (e) {}
       setTimeout(function () { burst(innerWidth / 2, innerHeight * .42, { count: 130, speed: 14 }); }, 800);
       setTimeout(function () { intro.classList.add('gone'); root.classList.remove('intro-on'); cannons(); }, 1500);
       setTimeout(function () { intro.remove(); }, 2200);

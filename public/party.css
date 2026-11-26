@@ -141,7 +141,7 @@ html.js .reveal.in { opacity: 1; translate: 0 0; }
 
 /* ---------- Envelope intro ---------- */
 .intro { display: none; }
-html.intro-on .intro, .intro.open {
+html.intro-on .intro, .intro.open, .intro.gone {
   position: fixed; inset: 0; z-index: 80;
   display: grid; place-content: center; justify-items: center; gap: 22px; padding: 16px;
   background:
@@ -197,6 +197,8 @@ html.intro-on .intro, .intro.open {
 
 @media (prefers-reduced-motion: reduce) {
   .cloud, .bunting, .five, .spark, .pop, .scroll-cue, .rsvp .btn::after, .thanks-card .big, .cd b.tick { animation: none !important; }
+  .envelope, .env-seal, .intro-tap { animation: none !important; }
+  .intro.gone { transform: none; }
   html.js .reveal { opacity: 1; translate: none; transition: none; }
 }
 
