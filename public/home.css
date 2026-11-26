@@ -35,7 +35,7 @@
 /* Furry family */
 .pets { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
 .pet { background: #fff; border-radius: 24px; padding: 26px 20px 22px; text-align: center; border: 3px solid var(--line); box-shadow: var(--shadow); }
-.pet .face { width: 110px; height: 110px; margin: 0 auto 12px; border-radius: 50%; display: grid; place-items: center; font-size: 3.4rem; background: var(--c); border: 5px solid #fff; box-shadow: 0 6px 16px rgba(43, 33, 64, .14); overflow: hidden; }
+.pet .face { width: 140px; height: 140px; margin: 0 auto 12px; border-radius: 50%; display: grid; place-items: center; font-size: 3.4rem; background: var(--c); border: 5px solid #fff; box-shadow: 0 6px 16px rgba(43, 33, 64, .14); overflow: hidden; }
 .pet .face img { width: 100%; height: 100%; object-fit: cover; }
 .pet:nth-child(1) .face { --c: #ffe3a1; } .pet:nth-child(2) .face { --c: #ffd2b8; } .pet:nth-child(3) .face { --c: #e0d8ff; }
 .pet h3 { font-size: 1.5rem; margin-bottom: 0; }
