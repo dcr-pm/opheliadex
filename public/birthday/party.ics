@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//opheliadex//birthday//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ophelia-5th-birthday-20261218@opheliadex.com
+DTSTAMP:20261126T000000Z
+DTSTART:20261218T160000
+DTEND:20261218T180000
+SUMMARY:Ophelia's 5th Birthday Party 🎉
+LOCATION:Kids Playland
+DESCRIPTION:Parents and grandparents welcome - food and drinks for grown-ups too. Please bring socks for the play area. Invite & RSVP: https://opheliadex.com/birthday/
+URL:https://opheliadex.com/birthday/
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Ophelia's birthday party tomorrow at 4 pm - don't forget socks!
+END:VALARM
+END:VEVENT
+END:VCALENDAR
