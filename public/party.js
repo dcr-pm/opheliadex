@@ -174,19 +174,29 @@
     var intro = document.querySelector('.intro');
     if (!intro) return;
     if (!root.classList.contains('intro-on')) { intro.remove(); setTimeout(cannons, 500); return; }
-    var opened = false;
+    // Timings, in milliseconds after the tap.
+    var CARD_OUT = reduce ? 0 : 1100; // when the card has finished sliding out (with reduced motion it appears at once)
+    var READ_TIME = 3000;             // how long the card then stays up, so there is time to read it
+    var opened = false, done = false, openedAt = 0, timer;
+    function finish() {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      intro.classList.add('gone'); root.classList.remove('intro-on');
+      cannons();
+      setTimeout(function () { intro.remove(); }, 700);
+    }
     intro.addEventListener('click', function () {
-      if (opened) return;
-      opened = true;
-      if (reduce) { // gentle version: a simple fade, no flip or confetti
-        intro.classList.add('gone'); root.classList.remove('intro-on');
-        setTimeout(function () { intro.remove(); }, 700);
+      if (opened) {
+        // A second tap moves on early, but only once the card has been out for a moment,
+        // so an accidental double-tap doesn't skip the words.
+        if (Date.now() - openedAt > CARD_OUT + 600) finish();
         return;
       }
+      opened = true; openedAt = Date.now();
       intro.classList.add('open');
       setTimeout(function () { burst(innerWidth / 2, innerHeight * .42, { count: 130, speed: 14 }); }, 800);
-      setTimeout(function () { intro.classList.add('gone'); root.classList.remove('intro-on'); cannons(); }, 1500);
-      setTimeout(function () { intro.remove(); }, 2200);
+      timer = setTimeout(finish, CARD_OUT + READ_TIME);
     });
   }
 
