@@ -1,24 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="party">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Thanks for your RSVP!</title>
+  <meta name="theme-color" content="#ff6fa5">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/party.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="/party.js" defer></script>
 </head>
-<body>
-  <main class="confetti" style="min-height:100vh">
-    <section class="thanks">
-      <div class="wrap narrow">
-        <div class="big">🎈</div>
-        <h1>Thank you!</h1>
-        <p class="lead" style="color:var(--muted);font-size:1.2rem">Your RSVP is in. Ophelia can't wait to celebrate with you!</p>
-        <p style="margin-top:28px"><a class="btn secondary" href="/birthday/">Back to the invite</a></p>
+<body data-celebrate>
+  <main>
+    <section class="sky thanks-sky">
+      <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+      <svg class="bunting" viewBox="0 0 1200 130" aria-hidden="true">
+      <polygon points="9.3,13.1 57.4,26.7 17.6,75.7" fill="#ff6fa5"/>
+      <polygon points="75.6,31.2 124.4,41.9 87.7,93.2" fill="#ffc94d"/>
+      <polygon points="142.0,45.1 191.4,52.8 157.8,106.3" fill="#3cc7b4"/>
+      <polygon points="208.4,54.8 258.2,59.3 228.1,114.9" fill="#8b6cf6"/>
+      <polygon points="275.0,60.3 325.0,61.7 298.5,119.0" fill="#5bbcff"/>
+      <polygon points="341.7,61.6 391.6,59.7 368.8,118.6" fill="#ff8a5b"/>
+      <polygon points="408.5,58.6 458.2,53.6 439.1,113.8" fill="#ff6fa5"/>
+      <polygon points="475.3,51.3 524.7,43.2 509.4,104.5" fill="#ffc94d"/>
+      <polygon points="542.3,39.7 591.0,28.6 579.6,90.7" fill="#3cc7b4"/>
+      <polygon points="609.0,28.6 657.7,39.7 620.4,90.7" fill="#8b6cf6"/>
+      <polygon points="675.3,43.2 724.7,51.3 690.6,104.5" fill="#5bbcff"/>
+      <polygon points="741.8,53.6 791.5,58.6 760.9,113.8" fill="#ff8a5b"/>
+      <polygon points="808.4,59.7 858.3,61.6 831.2,118.6" fill="#ff6fa5"/>
+      <polygon points="875.0,61.7 925.0,60.3 901.5,119.0" fill="#ffc94d"/>
+      <polygon points="941.8,59.3 991.6,54.8 971.9,114.9" fill="#3cc7b4"/>
+      <polygon points="1008.6,52.8 1058.0,45.1 1042.2,106.3" fill="#8b6cf6"/>
+      <polygon points="1075.6,41.9 1124.4,31.2 1112.3,93.2" fill="#5bbcff"/>
+      <polygon points="1142.6,26.7 1190.7,13.1 1182.4,75.7" fill="#ff8a5b"/>
+      <path d="M0,10 Q300,104 600,26 Q900,104 1200,10" fill="none" stroke="#2b2140" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div class="balloons" data-balloons aria-hidden="true"></div>
+      <div class="wrap narrow sky-inner">
+        <div class="thanks-card">
+          <div class="big">🎈</div>
+          <h1 style="font-size:clamp(2.2rem,9vw,3.4rem)">Thank you!</h1>
+          <p class="lead" style="max-width:26ch">Your RSVP is in. Ophelia can't wait to celebrate with you!</p>
+          <p style="margin:24px 0 0"><a class="btn secondary" href="/birthday/">Back to the invite</a></p>
+        </div>
       </div>
     </section>
   </main>

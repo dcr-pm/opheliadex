@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="party">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,23 +23,96 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/party.css">
+  <script>
+    // Show the envelope intro once per visit (skipped for people who prefer reduced motion).
+    (function (r) {
+      r.classList.add('js');
+      try {
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('invite-opened')) r.classList.add('intro-on');
+      } catch (e) {}
+      // Safety net: never leave the envelope covering the page if the effects script fails to load.
+      setTimeout(function () { if (!window.__party) r.classList.remove('intro-on'); }, 4000);
+    })(document.documentElement);
+  </script>
+  <script src="/party.js" defer></script>
 </head>
 <body>
-  <main>
-    <section class="invite-hero confetti">
-      <div class="wrap narrow">
-        <div class="eyebrow">You're invited!</div>
-        <h1>Ophelia is turning <span class="age">5</span></h1>
-        <p class="lead" style="color:var(--muted);font-size:1.2rem">Ophelia turns 5 on December 28th, and we're celebrating a little early with play, cake and lots of fun. We'd love to see you there!</p>
+  <div class="intro">
+    <button class="envelope" type="button" aria-label="Open your invitation">
+      <span class="env-back"></span>
+      <span class="env-letter">You're invited!<small>to Ophelia's party</small></span>
+      <span class="env-front"></span>
+      <span class="env-flap"></span>
+      <span class="env-seal">5</span>
+    </button>
+    <p class="intro-text">A special delivery for you 💌</p>
+    <p class="intro-tap">Tap to open</p>
+  </div>
 
-        <div class="details" style="text-align:left">
+  <main>
+    <section class="sky">
+      <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+      <svg class="bunting" viewBox="0 0 1200 130" aria-hidden="true">
+      <polygon points="9.3,13.1 57.4,26.7 17.6,75.7" fill="#ff6fa5"/>
+      <polygon points="75.6,31.2 124.4,41.9 87.7,93.2" fill="#ffc94d"/>
+      <polygon points="142.0,45.1 191.4,52.8 157.8,106.3" fill="#3cc7b4"/>
+      <polygon points="208.4,54.8 258.2,59.3 228.1,114.9" fill="#8b6cf6"/>
+      <polygon points="275.0,60.3 325.0,61.7 298.5,119.0" fill="#5bbcff"/>
+      <polygon points="341.7,61.6 391.6,59.7 368.8,118.6" fill="#ff8a5b"/>
+      <polygon points="408.5,58.6 458.2,53.6 439.1,113.8" fill="#ff6fa5"/>
+      <polygon points="475.3,51.3 524.7,43.2 509.4,104.5" fill="#ffc94d"/>
+      <polygon points="542.3,39.7 591.0,28.6 579.6,90.7" fill="#3cc7b4"/>
+      <polygon points="609.0,28.6 657.7,39.7 620.4,90.7" fill="#8b6cf6"/>
+      <polygon points="675.3,43.2 724.7,51.3 690.6,104.5" fill="#5bbcff"/>
+      <polygon points="741.8,53.6 791.5,58.6 760.9,113.8" fill="#ff8a5b"/>
+      <polygon points="808.4,59.7 858.3,61.6 831.2,118.6" fill="#ff6fa5"/>
+      <polygon points="875.0,61.7 925.0,60.3 901.5,119.0" fill="#ffc94d"/>
+      <polygon points="941.8,59.3 991.6,54.8 971.9,114.9" fill="#3cc7b4"/>
+      <polygon points="1008.6,52.8 1058.0,45.1 1042.2,106.3" fill="#8b6cf6"/>
+      <polygon points="1075.6,41.9 1124.4,31.2 1112.3,93.2" fill="#5bbcff"/>
+      <polygon points="1142.6,26.7 1190.7,13.1 1182.4,75.7" fill="#ff8a5b"/>
+      <path d="M0,10 Q300,104 600,26 Q900,104 1200,10" fill="none" stroke="#2b2140" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div class="balloons" data-balloons aria-hidden="true"></div>
+
+      <div class="wrap narrow sky-inner">
+        <div class="eyebrow pop">You're invited!</div>
+        <h1>
+          <span class="pop p2">Ophelia</span> <span class="pop p3">is turning</span>
+          <span class="five-wrap pop p4">
+            <span class="five">5</span>
+            <span class="spark s1" aria-hidden="true">✦</span><span class="spark s2" aria-hidden="true">✦</span><span class="spark s3" aria-hidden="true">✦</span><span class="spark s4" aria-hidden="true">✦</span><span class="spark s5" aria-hidden="true">✦</span>
+          </span>
+        </h1>
+        <p class="lead pop p5">She turns 5 on December 28th, and we're celebrating a little early with play, cake and lots of fun!</p>
+
+        <div class="countdown pop p6" id="countdown">
+          <p class="cd-label">The party starts in</p>
+          <div class="cd-tiles">
+            <div class="cd"><b data-u="d">--</b><span>days</span></div>
+            <div class="cd"><b data-u="h">--</b><span>hours</span></div>
+            <div class="cd"><b data-u="m">--</b><span>mins</span></div>
+            <div class="cd"><b data-u="s">--</b><span>secs</span></div>
+          </div>
+        </div>
+
+        <p class="pop-hint">Psst… try popping the balloons! 🎈<span class="scroll-cue" aria-hidden="true">↓</span></p>
+      </div>
+    </section>
+
+    <section class="party-details">
+      <div class="wrap narrow">
+        <div class="details reveal" style="text-align:left">
           <div class="detail">
+            <span class="sticker" aria-hidden="true">📅</span>
             <div class="label">When</div>
             <div class="value">Friday, December 18</div>
             <div class="sub">4:00 – 6:00 pm<br>
               <a href="/birthday/party.ics">Add to calendar →</a></div>
           </div>
           <div class="detail">
+            <span class="sticker" aria-hidden="true">📍</span>
             <div class="label">Where</div>
             <div class="value">Kidz Playland</div>
             <div class="sub">Indoor Playground<br>660 The Kingsway, Peterborough, ON K9J 7C8</div>
@@ -47,16 +120,16 @@
           </div>
         </div>
 
-        <div class="note" style="text-align:left">
+        <div class="note reveal" style="text-align:left">
           <p style="margin:0 0 .5em">👨‍👩‍👧 <strong>Parents and grandparents are welcome!</strong> There will be food and drinks for the grown-ups too.</p>
           <p style="margin:0">🧦 <strong>Please bring socks</strong>. They're required in the play area.</p>
         </div>
       </div>
     </section>
 
-    <section style="padding-top:24px">
+    <section class="confetti" style="padding-top:32px">
       <div class="wrap narrow">
-        <form class="rsvp" name="rsvp" method="POST" action="/birthday/thanks/"
+        <form class="rsvp reveal" name="rsvp" method="POST" action="/birthday/thanks/"
               data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="rsvp">
           <p class="hp"><label>Don't fill this in: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -127,16 +200,5 @@
     <div class="wrap">Questions? Just reply to the message you got this link in.</div>
   </footer>
 
-  <script>
-    // Hide headcount and allergy fields when someone can't come.
-    (function () {
-      var form = document.querySelector('form.rsvp');
-      var extra = form.querySelector('.attending-only');
-      form.addEventListener('change', function (e) {
-        if (e.target.name !== 'attending') return;
-        extra.hidden = e.target.value === 'No';
-      });
-    })();
-  </script>
 </body>
 </html>
